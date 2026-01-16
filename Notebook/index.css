@@ -1,0 +1,14 @@
+.heading{
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: blue 10px 4px 12px -2px;
+    text-align: center;
+    background-color: rgb(179, 16, 179);
+
+
+    
+}
+.app{
+    display: flex;
+}

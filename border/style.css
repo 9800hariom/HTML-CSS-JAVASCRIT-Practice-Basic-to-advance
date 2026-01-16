@@ -1,0 +1,49 @@
+
+body{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+    gap: 10px;
+    
+
+}
+
+
+
+.box1{
+    border:10px solid #4cdce4;
+    height: 100px;
+    width: 100px;
+    
+   
+    
+
+}
+.box2{
+    border: 10px dashed #4cdce4;
+    height: 100px;
+     width: 100px;
+    
+}
+.box3{
+    border: 10px double red;
+    height: 100px;
+        width: 100px;
+       
+}
+.box4{
+    border: 10px inset yellow;
+    height: 100px;
+        width: 100px;
+       
+}
+.box5{
+    border: 10px ridge chocolate;
+    height: 100px;
+        width: 100px;
+      
+      
+}
