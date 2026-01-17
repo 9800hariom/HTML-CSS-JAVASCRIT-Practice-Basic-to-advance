@@ -5,10 +5,35 @@
     box-shadow: blue 10px 4px 12px -2px;
     text-align: center;
     background-color: rgb(179, 16, 179);
+   }
 
-
+body{
+    background: black;
+}
+h1{
+    text-align: center;
+    align-items: center;
     
+    animation: shadow 2s infinite alternate;
 }
 .app{
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+}
+.note{
+    border: solid red;
+    animation: shadow 2s infinite alternate;
+
+    
+}
+@keyframes shadow {
+    from {
+        box-shadow: 10px 0 5px rgb(17, 224, 10);
+    }
+
+
+    to {
+        box-shadow: 0 0 25px rgb(223, 9, 37);
+    }
 }
