@@ -1,0 +1,78 @@
+
+
+
+
+body{
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+   
+}
+.inputcheckbox{
+    padding: 50px;
+    border:solid red ;
+}
+.inputcheckbox:has(input:checked){
+    background-color: blue;
+}
+.card{
+    border: 2px solid green;
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.shape1{
+    height: 100px;
+    width: 100px;
+    border: solid rgb(228, 223, 223);
+    background-color: blue;
+    border-radius: 0;
+
+
+}
+.shape2{
+    height: 100px;
+        width: 100px;
+        border: solid rgb(228, 223, 223);
+        background-color: blue;
+    border-radius: 50%;
+    color: white;
+   
+    text-align: center;
+    text-anchor: 30px;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+ 
+
+}
+.shape3{
+    height: 100px;
+    width: 100px;
+    border: solid rgb(228, 223, 223);
+     background-color: rgb(12, 12, 209);
+     border-radius: 1rem;
+}
+.shape4{
+    height: 100px;
+        width: 100px;
+        border: solid rgb(228, 223, 223);
+        background-color: blue;
+        border-radius: 50% 10% 50% 10%;
+}
+.shape5 {
+    height: 100px;
+    width: 100px;
+    border: solid rgb(228, 223, 223);
+    background-color: blue;
+    border-radius: 30% 70%/50% 50%;
+}
