@@ -1,70 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculater</title>
+    <title>Modern Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="main-border">
-        <div class="border">
-            <h1>012345678393348439439449934</h1>
-        </div>
-        <div class=" main-button">
-            <div class="button">
-                <h1>1</h1>
+    <div class="calculator">
+        <p style="color: white;">Made in Nepal</p>
+        <input type="text" class="display" id="display" disabled>
+        <div class="buttons">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button onclick="del">Del</button>
+            <button onclick="add('%')">%</button>
+            <button class="operator" onclick="add('/')">÷</button>
 
-            </div>
-            <div class="button">
-                <h1>2</h1>
+            <button onclick="add('7')">7</button>
+            <button onclick="add('8')">8</button>
+            <button onclick="add('9')">9</button>
+            <button onclick="add('*')" class="operator">x</button>
 
-            </div>
-            <div class="button">
-                <h1>3</h1>
+            <button onclick="add('4')">4</button>
+            <button onclick="add('5')">5</button>
+            <button onclick="add('6')">6</button>
+            <button onclick="add('-')" class="operator">-</button>
 
-            </div>
-            <div class="button">
-                <h1>1</h1>
-            </div>
-            <div class="button">
-                <h1>2</h1>
+            <button onclick="add('1')">1</button>
+            <button onclick="add('2')">2</button>
+            <button onclick="add('3')">3</button>
+            <button onclick="add('+')" class="operator">+</button>
+            
+            <button onclick="add('0')">0</button>
+            <button onclick="add('.')">.</button>
+            <button onclick="calculate()" class="equal">=</button>
 
-            </div>
-            <div class="button">
-                <h1>3</h1>
-            </div>
-
-            <div class="button">
-                <h1>1</h1>
-            </div>
-            <div class="button">
-                <h1>2</h1>
-
-            </div>
-            <div class="button">
-                <h1>3</h1>
-            </div>
-            <div class="button">
-                <h1>1</h1>
-            </div>
-            <div class="button">
-                <h1>2</h1>
-
-            </div>
-            <div class="button">
-                <h1>3</h1>
-            </div>
 
         </div>
+</div>
 
-    </div>
-
-
-
-
+    <script src="script.js"></script>
 </body>
-
 </html>
