@@ -1,0 +1,23 @@
+.box2{
+    border: 40px solid red;
+    margin-bottom: 50px;
+    
+}
+.button{
+    
+    background-color: black;
+    height: 150px;
+    width: 200px;
+    background-color: purple;
+    
+
+}
+div{
+    border: 2px solid black;
+    height: 100px;
+    width: 100px;
+    background-color: crimson;
+}
+.class1{
+    position:fixed;
+}

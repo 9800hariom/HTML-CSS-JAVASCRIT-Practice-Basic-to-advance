@@ -10,40 +10,41 @@ body{
     
 
 }
+.box {
+    height: 100px;
+    width: 100px;
+}
 
 
 
 .box1{
     border:10px solid #4cdce4;
-    height: 100px;
-    width: 100px;
-    
-   
-    
 
 }
 .box2{
     border: 10px dashed #4cdce4;
-    height: 100px;
-     width: 100px;
-    
 }
 .box3{
     border: 10px double red;
-    height: 100px;
-        width: 100px;
-       
+      
 }
 .box4{
     border: 10px inset yellow;
-    height: 100px;
-        width: 100px;
-       
+
 }
 .box5{
-    border: 10px ridge chocolate;
-    height: 100px;
-        width: 100px;
-      
-      
+    border: 20px ridge chocolate; 
+}
+
+.box6{
+    border: 20px groove yellow;
+}
+.box7{
+    border:20px outset red;
+}
+
+.box8{
+    background-color: blue;
+    border-style: dotted double groove outset;
+    border-width: 40px;
 }

@@ -1,0 +1,1080 @@
+<!-- ver 01: 2082/09/22 -->
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>National Economic Census 2026 - HRMS Form</title>
+    <link rel="stylesheet" href="style1.css">
+
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- <script src="/static/js/form-validate.1c6c39c896b1.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="/static/css/style.f15aa8660904.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/static/css/nepali.datepicker.v4.0.8.min.6aef0b97b5f0.css"> -->
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        fieldset {
+            margin-top: 20px;
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid white;
+        }
+
+        legend {
+            color: #ffe4b5;
+            font-weight: 600;
+            padding: 0 10px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 18px;
+        }
+
+        .form-grid>div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.85rem;
+            margin-top: 2px;
+        }
+
+        input[type="file"] {
+            padding: 2px;
+        }
+
+        button#submitBtn {
+            margin-top: 20px;
+            padding: 8px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="myform" method="post" action="/person_create/" enctype="multipart/form-data" novalidate>
+        <input type="hidden" name="csrfmiddlewaretoken"
+            value="qKlfjJjUq0TzcaOgiNoRzKDiCks2PJDzLEyX2oODBhEBAFLnrpM8r0c7tpZfRBwv">
+
+        <div class="header">
+            <img src="image.png" height="67" width="75" alt="EC Logo" class="logo" />
+            <div class="title">
+                <h1>नेपाल सरकार</h1>
+                <h1>प्रधानमन्त्री तथा मन्त्रिपरिषद्को कार्यालय</h1>
+                <h2>राष्ट्रिय तथ्याङ्क कार्यालय</h2>
+                <h4>राष्ट्रिय आर्थिक गणना, <span class="year">२०८२</span></h4>
+                <h3>जनशक्ति व्यवस्थापन प्रणाली</h3>
+            </div>
+            <img src="image1.png" height="70" width="72" alt="Nepal Logo" class="logo"
+                id="ec_logo" />
+        </div>
+
+        <div style="margin-top:10px; text-align: left;">
+            <!-- फाराम नम्बर: <h2 class="regnum" style="display: inline; margin-left: 5px;">REG-0062314</h2> -->
+        </div>
+        <div style="margin-top:10px; text-align: left; color:hwb(55 14% 3%); font-size: 0.90rem;">
+            <hr>
+            सबै विवरण भर्न अनिवार्य छ । (All fields are mandatory.) <br>
+            फोेटो/डकुमेन्ट अपलोड गर्दा फाईलको प्रकार .pdf वा .jpeg र अधिकतम साइज 200 KB को हुनुपर्छ ।
+            <hr>
+        </div>
+
+        <!-- पद तथा कार्यक्षेत्र विवरण -->
+        <fieldset>
+            <legend>उम्मेदवारले काम गर्न चाहेको पद तथा कार्यक्षेत्र सम्बन्धी विवरण</legend>
+            <div class="form-grid">
+                <div>
+                    <label for="id_application_type">आवेदनको पद</label>
+                    <select name="application_type" id="application_type" required>
+                        <option value=""> </option>
+                        <option value="1">सुपरिवेक्षक</option>
+                        <option value="2">गणक</option>
+                        <option value="3">दुवै</option>
+                    </select>
+                    <input name="application_type_name" id="application_type_name" value="" hidden="hidden">
+
+                </div>
+
+                <div>
+                    <label for="id_prov1">प्रदेश</label>
+                    <select name="prov1" id="prov1" required>
+                        <option value=""> </option>
+                        <option value="1">कोशी</option>
+                        <option value="2">मधेश</option>
+                        <option value="3">बागमती</option>
+                        <option value="4">गण्डकी</option>
+                        <option value="5">लुम्बिनी</option>
+                        <option value="6">कर्णाली</option>
+                        <option value="7">सुदुरपश्चिम</option>
+                    </select>
+                </div>
+                <input name="prov1_name" id="prov1_name" value="" hidden="hidden">
+                <div>
+                    <label for="id_dist1">जिल्ला</label>
+                    <select name="dist1" id="dist1">
+                        <option value=""> </option>
+                    </select>
+
+                    <input name="dist1_name" id="dist1_name" value="" hidden="hidden">
+                </div>
+
+                <div>
+                    <label for="id_mun1">नगरपालिका/गाउँपालिका </label>
+                    <select name="mun1" id="mun1">
+                        <option value=""> </option>
+                    </select>
+
+                    <input name="mun1_name" id="mun1_name" value="" hidden="hidden">
+                </div>
+
+                <div>
+                    <label for="id_wn1">वार्ड नं.</label>
+                    <input name="wn1" id="wn1" value="" required>
+                </div>
+
+            </div>
+        </fieldset>
+
+
+        <!-- व्यक्तिगत विवरण -->
+
+        <fieldset>
+            <legend>उम्मेदवारको व्यक्तिगत विवरण</legend>
+            <div class="form-grid">
+                <div>
+                    <label for="id_name">आवेदकको नाम,थर (Nepali)</label>
+                    <input type="text" name="name" maxlength="100" required id="id_name">
+
+                </div>
+
+                <div>
+                    <label for="id_name_en">आवेदकको नाम,थर (English)</label>
+                    <input type="text" name="name_en" maxlength="100" required id="id_name_en">
+
+                </div>
+
+                <div>
+                    <label for="id_sex">लिङ्ग</label>
+                    <select name="sex" required id="id_sex">
+                        <option value="" selected></option>
+
+                        <option value="1">पुरुष</option>
+
+                        <option value="2">महिला</option>
+
+                        <option value="3">अन्य</option>
+
+                    </select>
+
+                </div>
+
+                <div>
+                    <label for="id_father_name">बाबुको नाम,थर</label>
+                    <input type="text" name="father_name" maxlength="80" required id="id_father_name">
+
+                </div>
+
+                <div>
+                    <label for="id_mother_name">आमाको नाम,थर</label>
+                    <input type="text" name="mother_name" maxlength="80" required id="id_mother_name">
+
+                </div>
+
+                <div>
+                    <label for="id_grandfather_name">बाजेको नाम,थर</label>
+                    <input type="text" name="grandfather_name" maxlength="80" required id="id_grandfather_name">
+
+                </div>
+
+                <div>
+                    <label for="id_dob">जन्म मिति (वि.स.) (उदाहरण: 2051/08/17)</label>
+                    <input type="text" name="dob" maxlength="10" required id="id_dob">
+                    <div id="dob-error" style="color:red;"></div>
+
+
+                </div>
+
+                <div>
+                    <label for="id_dob_en">जन्म मिति (AD) (उदाहरण: 2000/01/25)</label>
+                    <input type="text" name="dob_en" maxlength="10" required id="id_dob_en">
+                    <div id="dob_en-error" style="color:red;"></div>
+
+
+                </div>
+
+                <div>
+                    <label for="id_age">पुरा भएको उमेर (बर्ष) </label>
+                    <input type="number" name="age" required id="id_age">
+                    <div id="age-error" style="color:red;"></div>
+
+
+                </div>
+
+                <div>
+                    <label for="id_phone">सम्पर्क नम्बर</label>
+                    <input type="number" name="phone" min="-9223372036854775808" max="9223372036854775807"
+                        id="id_phone">
+                    <div id="phone-error" style="color:red;"></div>
+
+
+                </div>
+
+                <div>
+                    <label for="id_email">इमेल</label>
+                    <input type="email" name="email" maxlength="40" required id="id_email">
+                    <div id="email-error" style="color:red;"></div>
+
+                </div>
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>नागरिकता सम्बन्धी विवरण</legend>
+            <div class="form-grid">
+                <div>
+                    <label for="id_citizen_number">नागरिकता नम्बर</label>
+                    <input type="text" name="citizen_number" maxlength="50" required id="id_citizen_number">
+
+                    <div id="citizen_number-error" style="color:red;"></div>
+
+                </div>
+
+                <div>
+                    <label for="id_prov_ctzn">प्रदेश (नागरिकता जारी गर्ने जिल्ला रहेको)</label>
+                    <select name="prov_ctzn" id="prov_ctzn">
+                        <option value=""> </option>
+                        <option value="1">कोशी</option>
+                        <option value="2">मधेश</option>
+                        <option value="3">बागमती</option>
+                        <option value="4">गण्डकी</option>
+                        <option value="5">लुम्बिनी</option>
+                        <option value="6">कर्णाली</option>
+                        <option value="7">सुदुरपश्चिम</option>
+                    </select>
+
+                </div>
+
+                <div>
+                    <label for="id_citizen_issued_dist">नागरिकता जारी गर्ने जिल्ला</label>
+                    <select name="citizen_issued_dist" id="citizen_issued_dist">
+                        <option value=""> </option>
+                    </select>
+                    <input name="citizen_issued_dist_name" id="citizen_issued_dist_name" value="" hidden="hidden">
+                </div>
+
+                <div>
+                    <label for="id_citizen_issued">नागरिकता जारी मिति (वि.स.) (उदाहरण: 2054/01/01)</label>
+                    <input type="text" name="citizen_issued" maxlength="50" class=citizen_issued required
+                        id="id_citizen_issued">
+                    <div class="citizen_date_error" style="color:red;"></div>
+                    <div id="citizen_error" class="citizen_error" style="color:red;"></div>
+                </div>
+
+                <div>
+                    <label for="id_citizen_card">नागरिकता प्रमाणपत्र</label>
+                    <input type="file" name="citizen_card" class=citizen_card required id="id_citizen_card">
+                </div>
+
+                <div id="citizen_card-error" style="color:red;"></div>
+
+
+                <!-- errmag if file exceed size 100 KB -->
+                <div class="file_error_citizen_card" style="color:red;"></div>
+            </div>
+        </fieldset>
+
+        <!-- ठेगाना विवरण -->
+        <fieldset>
+            <legend>ठेगाना विवरण</legend>
+
+            <!-- Subheading: स्थायी ठेगाना -->
+            <div style="grid-column: 1 / -1; font-weight: 600; margin-top: 10px; color:#ffe4b5;">
+                क) स्थायी ठेगाना
+            </div>
+            <div class="form-grid" id="perm">
+                <div>
+                    <label for="id_province">प्रदेश</label>
+                    <select name="province" id="province">
+                        <option value=""> </option>
+                        <option value="1">कोशी</option>
+                        <option value="2">मधेश</option>
+                        <option value="3">बागमती</option>
+                        <option value="4">गण्डकी</option>
+                        <option value="5">लुम्बिनी</option>
+                        <option value="6">कर्णाली</option>
+                        <option value="7">सुदुरपश्चिम</option>
+                    </select>
+                    <input name="province_name" id="province_name" value="" hidden="hidden">
+                </div>
+
+                <div>
+                    <label for="id_district">जिल्ला</label>
+                    <select name="district" id="district">
+                        <option value=""> </option>
+                    </select>
+                    <input name="district_name" id="district_name" value="" hidden="hidden">
+                </div>
+
+                <div>
+                    <label for="id_municipality">नगरपालिका/गाउँपालिका</label>
+                    <select name="municipality" id="municipality">
+                        <option value=""> </option>
+                    </select>
+                    <input name="municipality_name" id="municipality_name" value="" hidden="hidden">
+                </div>
+
+                <div>
+                    <label for="id_ward">वडा नम्बर</label>
+                    <input type="number" name="ward" id=ward required id="id_ward">
+                </div>
+                <div>
+                    <label for="id_tole">टोलको नाम</label>
+                    <input name="tole" id="tole" value="" required>
+                </div>
+            </div>
+
+            <div>
+                <div style="grid-column: 1 / -1; font-weight: 600; margin-top: 10px; color:#ffe4b5;">
+                    स्थायी र अस्थायी ठेगाना एउटै/फरक छ ?
+
+                </div>
+
+                <select name="diff_temp_add" id="diff_temp_add">
+                    <option value=""> </option>
+                    <option value="same">एउटै छ</option>
+                    <option value="different">फरक छ</option>
+                </select>
+            </div>
+
+            <!-- Subheading: अस्थायी ठेगाना -->
+            <div style="grid-column: 1 / -1; font-weight: 600; margin-top: 10px; color:#ffe4b5;">
+                ख) अस्थायी ठेगाना
+            </div>
+            <div class="form-grid" id="temp">
+                <div>
+                    <label for="id_prov2">प्रदेश</label>
+                    <select name="prov2" id="prov2">
+                        <option value=""> </option>
+                        <option value="1">कोशी</option>
+                        <option value="2">मधेश</option>
+                        <option value="3">बागमती</option>
+                        <option value="4">गण्डकी</option>
+                        <option value="5">लुम्बिनी</option>
+                        <option value="6">कर्णाली</option>
+                        <option value="7">सुदुरपश्चिम</option>
+                    </select>
+                    <input name="prov2_name" id="prov2_name" value="" hidden="hidden">
+                </div>
+
+                <div>
+                    <label for="id_dist2">जिल्ला</label>
+                    <select name="dist2" id="dist2">
+                        <option value=""> </option>
+                    </select>
+                    <input name="dist2_name" id="dist2_name" value="" hidden="hidden">
+                </div>
+
+                <div>
+                    <label for="id_mun2">नगरपालिका/गाउँपालिका</label>
+                    <select name="mun2" id="mun2">
+                        <option value=""> </option>
+                    </select>
+                    <input name="mun2_name" id="mun2_name" value="" hidden="hidden">
+                </div>
+
+                <div>
+                    <label for="id_wn2">वडा नम्बर</label>
+                    <input type="number" name="wn2" id=wn2 required id="id_wn2">
+                </div>
+
+                <div>
+                    <label for="id_tole2">टोलको नाम</label>
+                    <input name="tole2" id="tole2" value="" required>
+                </div>
+            </div>
+
+        </fieldset>
+        <!-- शैक्षिक विवरण -->
+        <fieldset id="edu-enumerator">
+            <legend>शैक्षिक विवरण (गणकको लागि न्युनतम योग्यता)</legend>
+            <div class="form-grid">
+                <div>
+                    <label for="id_edu">उत्तीर्ण गरेको तह</label>
+                    <select name="edu" id="edu" class="enu">
+                        <option value="0"> </option>
+                        <option value="1">आई.ए./१०‌ जोड २ वा सो सरह</option>
+                        <!-- <option value="2">स्नातक तह वा सो सरह</option> -->
+                    </select>
+                    <input name="edu_name" id="edu_name" class="enu" value="" hidden="hidden">
+                </div>
+
+                <div>
+                    <label for="id_edu_faculty">अध्ययनको संकाय</label>
+                    <select name="edu_faculty" id="edu_faculty" class="enu">
+                        <option value=""> </option>
+                        <option value="humanitism">मानविकी</option>
+                        <option value="science_tech">विज्ञान तथा प्रविधि</option>
+                        <option value="commerce">वाणिज्य</option>
+                        <option value="education">शिक्षा</option>
+                        <option value="others">अन्य</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="id_major_subject">मुख्य बिषय</label>
+                    <input type="text" name="major_subject" value="NOTAPPL" maxlength="100" class="enu"
+                        id="id_major_subject">
+                </div>
+
+                <div>
+                    <label for="id_tot_per">प्राप्ताङ्क(प्रतिशत/GPA)</label>
+                    <input type="text" name="tot_per" value="NOTAPPL" maxlength="100" id=tot_per class="enu"
+                        id="id_tot_per">
+                    <div id="tot_per_error" style="color:red;"> </div>
+                </div>
+
+                <div style="grid-column: 1 / -1;">
+                    <label for="id_educ_certificate">न्युनतम शैक्षिक योग्यताको ट्रान्सक्रिप्ट/मार्कसिट
+                        प्रमाणपत्र</label>
+                    <input type="file" name="educ_certificate" id=educ_certificate class="enu" id="id_educ_certificate">
+
+                    <!-- errmag if file exceed size 100 KB -->
+                    <div class="file-error_educ_certificate" style="color:red;"></div>
+
+                </div>
+                <div style="grid-column: 1 / -1;">
+                    <label for="id_charact_certificate">न्युनतम शैक्षिक योग्यताको चारित्रिक प्रमाणपत्र</label>
+                    <input type="file" name="charact_certificate" id=charact_certificate class="enu"
+                        id="id_charact_certificate">
+
+                    <!-- errmag if file exceed size 100 KB -->
+                    <div class="file-error_charact_certificate" style="color:red;"></div>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset id="edu-supervisor" style="display:none;">
+            <legend>शैक्षिक विवरण (सुपरिवेक्षकको लागि न्युनतम योग्यता)</legend>
+
+            <div class="form-grid">
+
+                <div>
+                    <label>शैक्षिक योग्यता</label>
+                    <select name="sup_edu" class="sup" id="sup_edu">
+                        <option value=""></option>
+                        <option value="2">स्नातक वा सो सरह</option>
+                        <!-- <option value="3">स्नातकोत्तर</option> -->
+                    </select>
+                </div>
+
+                <div>
+                    <label>संकाय</label>
+                    <select name="sup_faculty" class="sup" id="sup_faculty">
+                        <option value=""></option>
+                        <option value="humanitism">मानविकी</option>
+                        <option value="science_tech">विज्ञान तथा प्रविधि</option>
+                        <option value="commerce">वाणिज्य</option>
+                        <option value="education">शिक्षा</option>
+                        <option value="others">अन्य</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>मुख्य विषय</label>
+                    <input type="text" name="sup_major" id="sup_major" class="sup">
+                </div>
+
+                <div>
+                    <label>प्राप्ताङ्क(प्रतिशत/GPA)</label>
+                    <input type="number" step="0.01" name="sup_percent" id="sup_percent" class="sup">
+                    <div id="sup_percent_error" style="color:red;"> </div>
+                </div>
+
+                <div style="grid-column: 1 / -1;">
+                    <label for="id_sup_edu_cert">
+                        न्युनतम शैक्षिक योग्यताको ट्रान्सक्रिप्ट/मार्कसिट प्रमाणपत्र
+                    </label>
+                    <input type="file" name="sup_edu_cert" class=sup_certificate id="id_sup_edu_cert">
+
+
+                    <!-- errmag if file exceed size 100 KB -->
+                    <div class="file_error_sup_edu_cert" style="color:red;"></div>
+                </div>
+
+
+                <!-- supr character load -->
+
+                <div style="grid-column: 1 / -1;">
+                    <label for="id_sup_charact_certificate">
+                        न्युनतम शैक्षिक योग्यताको चारित्रिक प्रमाणपत्र
+                    </label>
+                    <input type="file" name="sup_charact_certificate" class=sup_charact id="id_sup_charact_certificate">
+
+                    <!-- errmag if file exceed size 100 KB -->
+                    <div class="file_error_sup_charact_certificate" style="color:red;"></div>
+                </div>
+
+
+            </div>
+        </fieldset>
+
+        <!-- HIGHER EDUCATION -->
+
+        <fieldset>
+            <legend>न्युनतम शैक्षिक योग्यता भन्दा माथिल्लो योग्यता विवरण</legend>
+
+            <div class="form-grid">
+                <div>
+                    <label for="id_is_higher_edu">तपाईले आवेदन गरेको पदकोलागि आवश्यक न्युनतम शैक्षिक योग्यता भन्दा
+                        माथिल्लो योग्यता छ ?</label>
+                    <select name="is_higher_edu" id="is_higher_edu">
+                        <option value=""> </option>
+                        <option value="yes">छ</option>
+                        <option value="no">छैन</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <div id="high_edu_div">
+                    <label>शैक्षिक योग्यता</label>
+                    <select name="higher_edu" class="higher_edu" id="higher_edu">
+                        <option value=""></option>
+                        <option value="2">स्नातक वा सो सरह</option>
+                        <option value="3">स्नातकोत्तर वा सो भन्दा माथि</option>
+                    </select>
+                </div>
+
+                <div id="high_edu_faculty_div">
+                    <label>संकाय</label>
+                    <select name="higher_edu_faculty " class="higher_edu_faculty " id="higher_edu_faculty ">
+                        <option value=""></option>
+                        <option value="humanitism">मानविकी</option>
+                        <option value="science_tech">विज्ञान तथा प्रविधि</option>
+                        <option value="commerce">वाणिज्य</option>
+                        <option value="education">शिक्षा</option>
+                        <option value="others">अन्य</option>
+                    </select>
+                </div>
+
+                <div id="high_edu_percent_div">
+                    <label>प्राप्ताङ्क(प्रतिशत/GPA)</label>
+                    <input type="number" step="0.01" name="higher_edu_percent" id="higher_edu_percent"
+                        class="higher_edu_percent">
+                    <div id="higher_edu_percent_error" style="color:red;"> </div>
+                </div>
+            </div>
+
+            <div style="grid-column: 1 / -1;" id="high_edu_certificate_div">
+                <label for="id_higher_edu_cert">
+                    माथिल्लो शैक्षिक योग्यताको चारित्रिक प्रमाणपत्र
+                </label>
+                <input type="file" name="higher_edu_cert" class=higher_edu_cert id="id_higher_edu_cert">
+
+            </div>
+            <!-- errmag if file exceed size 100 KB -->
+            <div class="file_error_higher_edu_cert" style="color:red;"></div>
+            </div>
+        </fieldset>
+
+        <!-- तालिम, अनुभव, अन्य विवरण -->
+        <fieldset>
+            <legend>तालिम सम्बन्धी विवरण</legend>
+            <div class="form-grid">
+                <div>
+                    <label for="id_training">तथ्याङ्क संकलन सम्बन्धी कुनै तालिम छ ?</label>
+                    <select name="training" id="training">
+                        <option value=""> </option>
+                        <option value="yes">छ</option>
+                        <option value="no">छैन</option>
+                    </select>
+                </div>
+
+                <div id="training_agency_div">
+                    <label for="id_training_agency">तालिम दिने संस्थाको नाम</label>
+                    <input type="text" name="training_agency" value="NOTAPPL" maxlength="100" class="train"
+                        id="id_training_agency">
+                </div>
+
+                <div id="training_tenure_div">
+                    <label for="id_training_tenure">तालिमको अवधि (दिनमा)</label>
+                    <input type="number" name="training_tenure" class="train" id="id_training_tenure">
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>अनुभव सम्बन्धी विवरण</legend>
+            <div class="form-grid">
+                <div>
+                    <label for="id_experince">तथ्याङ्क संकलन सम्बन्धी कुनै किसिमको अनुभव छ ?</label>
+                    <select name="experince" id="experince">
+                        <option value=""> </option>
+                        <option value="yes">छ</option>
+                        <option value="no">छैन</option>
+                    </select>
+                </div>
+
+                <div id="exper_agency">
+                    <label for="id_experince_agency">काम गरेको संस्थाको नाम</label>
+                    <input type="text" name="experince_agency" value="NOTAPPL" maxlength="100" class="exper"
+                        id="id_experince_agency">
+                </div>
+
+                <div id="exper_tenure">
+                    <label for="id_experince_tenure">काम गरेको अवधि (दिनमा)</label>
+                    <input type="number" name="experince_tenure" class="exper" id="id_experince_tenure">
+                </div>
+
+                <div id="exper_certificate">
+                    <label for="id_exper_certificate">अनुभव प्रमाणपत्र (कुनै एक मात्र)</label>
+                    <input type="file" id="exper_certificate" class="exper_certificate" name="exper_certificate"
+                        accept=".pdf,.jpeg,.jpg">
+                    <!-- errmag if file exceed size 100 KB -->
+                    <div class="file_error_exper_certificate" style="color:red;"></div>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>अन्य विवरण</legend>
+            <div class="form-grid">
+                <div>
+                    <label for="id_photo">आवेदकको फोटो</label>
+                    <input type="file" id="photo" class="photo" name="photo" accept=".pdf,.jpeg,.jpg" required>
+                    <!-- errmag if file exceed size 100 KB -->
+                    <div class="file_error_photo" style="color:red;"></div>
+                </div>
+
+                <div style="display: flex; align-items: left; gap: 10px; margin-top: 10px;">
+                    <input type="checkbox" name="confirm_info" id="confirm_info" required
+                        style="width: 15px; height: 15px; transform: scale(1.5);">
+                    <label for="confirm_info" style="color:#ffe4b5; font-weight: 500;">
+                        मैले माथि पेश गरेका सबै विवरणहरू सही छन् । कुनै फरक परेमा कानुन बमोजिम सहने छु ।
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+
+        <button type="submit" id="submitBtn">
+            <i class="fas fa-paper-plane"></i> Submit
+        </button>
+        <br>
+        <hr>
+        <div id="footer"> </div>
+        <div style="text-align:right; margin-top:15px; font-size:12px; color:#999; font-style:italic;">
+            Total Visitors: 186037
+        </div>
+
+    </form>
+
+    <!-- FILTER DISTRICT OF CITIZENSHIP ISSUED-->
+    <script>
+        $(document).ready(function () {
+            $('#prov_ctzn').change(function () {
+                var provID = $(this).val();
+                if (provID) {
+                    $.ajax({
+                        url: '/dist_choice/',  // Django URL
+                        data: { 'provID': provID },
+                        dataType: 'json',
+                        success: function (data) {
+                            console.log("Data received:", data);
+                            var distSelect = $("#citizen_issued_dist");
+                            distSelect.empty();
+                            distSelect.append($('<option>', { value: '', text: 'Choose district...' }));
+                            $.each(data, function (index, dist) {
+                                distSelect.append($('<option>', {
+                                    value: dist.dist,
+                                    text: dist.dist_name
+                                }));
+                            });
+                        },
+                        error: function (xhr, status, error) {
+                            console.log(xhr.responseText);
+                            alert('Error loading districts: ' + error);
+                        }
+                    });
+                } else {
+                    $("#citizen_issued_dist").empty();
+                    $("#citizen_issued_dist").append($('<option>', { value: '', text: 'Select province first' }));
+                }
+            });
+        });
+
+
+        // LIST THE EMPY FIELDS BEFORE SUBMIT    
+        $(function () {
+            $("#myform").on("submit", function (e) {
+
+                let invalidFields = [];
+                let firstInvalid = null;
+
+                const $form = $(this);
+                const $noExperience = $("#no_experience");
+
+                $form.find("input, select, textarea").each(function () {
+
+                    const $el = $(this);
+
+                    // Skip hidden / disabled / readonly
+                    if ($el.is(":hidden") || $el.is(":disabled") || $el.is("[readonly]")) return;
+
+                    // Skip experience-related if no_experience checked
+                    if ($noExperience.is(":checked") && $el.hasClass("mand_check")) return;
+
+                    let isInvalid = false;
+
+                    // Required input/select/textarea
+                    if ($el.prop("required") && !$el.val()) {
+                        isInvalid = true;
+                    }
+
+                    // Required checkbox
+                    if ($el.is(":checkbox") && $el.prop("required") && !$el.is(":checked")) {
+                        isInvalid = true;
+                    }
+
+                    if (isInvalid) {
+                        e.preventDefault();
+
+                        // Find label text
+                        let labelText = "";
+
+                        if ($el.attr("id")) {
+                            labelText = $form.find("label[for='" + $el.attr("id") + "']").text();
+                        }
+
+                        labelText = labelText || $el.attr("name") || "Unknown field";
+
+                        invalidFields.push(labelText);
+
+                        if (!firstInvalid) {
+                            firstInvalid = $el;
+                        }
+
+                        // Highlight field
+                        $el.css({
+                            border: "2px solid red",
+                            background: ""
+                        });
+                    }
+                });
+
+                if (invalidFields.length > 0) {
+                    e.preventDefault();
+
+                    alert(
+                        "⚠️ तलका फिल्डहरू भरिएको छैन वा अमान्य छन्:\n\n" +
+                        invalidFields.map(f => "• " + f).join("\n")
+                    );
+
+                    // Scroll to first invalid field
+                    $("html, body").animate({
+                        scrollTop: firstInvalid.offset().top - 100
+                    }, 600);
+
+                    firstInvalid.focus();
+                    return false;
+                }
+
+            });
+
+        });
+
+        // education control by role id="edu-supervisor"
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const roleSelect = document.getElementById("application_type");
+            const supervisorSection = document.getElementById("edu-supervisor");
+            const enumeratorSection = document.getElementById("edu-enumerator");
+            const supFields = document.querySelectorAll(".sup");
+            const enuFields = document.querySelectorAll(".enu");
+
+            function toggleEduSections() {
+                const role = roleSelect.value;
+
+                // Supervisor section
+                if (role === "1" || role === "3") { // Supervisor or Both
+                    supervisorSection.style.display = "block";
+                    supFields.forEach(f => {
+                        f.setAttribute("required", "required");
+                        // remove default if previously NOTAPPL
+                        if (f.type !== "file" && f.value === "NOTAPPL") f.value = "";
+                    });
+                } else {
+                    supervisorSection.style.display = "none";
+                    supFields.forEach(f => {
+                        f.removeAttribute("required");
+                        if (f.type !== "file") f.value = "NOTAPPL"; // inactive
+                        else f.value = ""; // clear file
+                    });
+                }
+
+                // Enumerator section
+                if (role === "2" || role === "3") { // Enumerator or Both
+                    enumeratorSection.style.display = "block";
+                    enuFields.forEach(f => {
+                        f.setAttribute("required", "required");
+                        if (f.type !== "file" && f.value === "NOTAPPL") f.value = "";
+                    });
+                } else {
+                    enumeratorSection.style.display = "none";
+                    enuFields.forEach(f => {
+                        f.removeAttribute("required");
+                        if (f.type !== "file") f.value = "NOTAPPL";
+                        else f.value = "";
+                    });
+                }
+            }
+
+            // On page load
+            toggleEduSections();
+
+            // On role change
+            roleSelect.addEventListener("change", toggleEduSections);
+        });
+
+        //Higher Education
+
+        $(document).ready(function () {
+
+            function toggleTrainingFields() {
+                const value = $("#is_higher_edu").val();
+
+                if (value === "no") { // छैन
+                    $("#high_edu_div, #high_edu_faculty_div, #high_edu_percent_div, #high_edu_certificate_div").hide();
+                    // $(".exper").val("NOTAPPL"); // optional default
+                } else { // छ or empty
+                    $("#high_edu_div, #high_edu_faculty_div, #high_edu_percent_div, #high_edu_certificate_div").show();
+                    $(".higher_edu").val("");
+                }
+            }
+
+            // Run on page load
+            toggleTrainingFields();
+
+            // Run on change
+            $("#is_higher_edu").change(toggleTrainingFields);
+
+        });
+
+
+        // Toggle of Training and Experience
+        //------------------------------------
+
+        $(document).ready(function () {
+
+            function toggleTrainingFields() {
+                const value = $("#training").val();
+
+                if (value === "no") { // छैन
+                    $("#training_agency_div, #training_tenure_div").hide();
+                    $(".train").val("NOTAPPL").prop("readonly", true); // optional default
+                } else { // छ or empty
+                    $("#training_agency_div, #training_tenure_div").show();
+                    $(".train").val("").prop("readonly", false);
+                }
+            }
+
+            // Run on page load
+            toggleTrainingFields();
+
+            // Run on change
+            $("#training").change(toggleTrainingFields);
+
+        });
+
+        //experience
+
+        $(document).ready(function () {
+
+            function toggleTrainingFields() {
+                const value = $("#experince").val();
+
+                if (value === "no") { // छैन
+                    $("#exper_agency, #exper_tenure, #exper_certificate").hide();
+                    // $(".exper").val("NOTAPPL"); // optional default
+                } else { // छ or empty
+                    $("#exper_agency_div, #exper_tenure, #exper_certificate").show();
+                    $(".exper").val("");
+                }
+            }
+
+            // Run on page load
+            toggleTrainingFields();
+
+            // Run on change
+            $("#experince").change(toggleTrainingFields);
+
+        });
+
+
+        //Check File Size upto 100 KB
+        //------------------------------------------
+
+        // NAGARIKATA SIZE
+
+        $(document).ready(function () {
+            $('.citizen_card').on('change', function () {
+                const file = this.files[0];
+                const maxSize = 200 * 1024; // 100 KB
+
+                if (file && file.size > maxSize) {
+                    $('.file_error_citizen_card')
+                        .text('File size must be 200 KB or less.');
+                    $(this).val('');
+                } else {
+                    $('.file_error_citizen_card').text('');
+                }
+            });
+        });
+
+
+        //enu marksheet
+        $(document).ready(function () {
+            $('#educ_certificate').on('change', function () {
+                const file = this.files[0]; // get selected file
+                const maxSize = 200 * 1024; // 100 KB in bytes
+                if (file && file.size > maxSize) {
+                    $('.file-error_educ_certificate').text('File size must be 200 KB or less.');
+                    $(this).val(''); // clear the input
+                } else {
+                    $('.file-error_educ_certificate').text('');
+                }
+            });
+        });
+
+        //enu character
+        $(document).ready(function () {
+            $('#charact_certificate').on('change', function () {
+                const file = this.files[0]; // get selected file
+                const maxSize = 200 * 1024; // 100 KB in bytes
+                if (file && file.size > maxSize) {
+                    $('.file-error_charact_certificate').text('File size must be 200 KB or less.');
+                    $(this).val(''); // clear the input
+                } else {
+                    $('.file-error_charact_certificate').text('');
+                }
+            });
+        });
+
+        // Sup  CERTIFICATE
+        $(document).ready(function () {
+            $('.sup_certificate').on('change', function () {
+                const file = this.files[0];
+                const maxSize = 200 * 1024; // 100 KB
+
+                if (file && file.size > maxSize) {
+                    $('.file_error_sup_edu_cert')
+                        .text('File size must be 200 KB or less.');
+                    $(this).val('');
+                } else {
+                    $('.file_error_sup_edu_cert').text('');
+                }
+            });
+        });
+
+        // Sup CHARCTER CERTIFICATE
+        $(document).ready(function () {
+            $('.sup_charact').on('change', function () {
+                const file = this.files[0];
+                const maxSize = 200 * 1024; // 100 KB
+
+                if (file && file.size > maxSize) {
+                    $('.file_error_sup_charact_certificate')
+                        .text('File size must be 200 KB or less.');
+                    $(this).val('');
+                } else {
+                    $('.file_error_sup_charact_certificate').text('');
+                }
+            });
+        });
+
+
+        // Higher Edu CERTIFICATE
+        $(document).ready(function () {
+            $('.higher_edu_cert').on('change', function () {
+                const file = this.files[0];
+                const maxSize = 200 * 1024; // 100 KB
+
+                if (file && file.size > maxSize) {
+                    $('.file_error_higher_edu_cert')
+                        .text('File size must be 200 KB or less.');
+                    $(this).val('');
+                } else {
+                    $('.file_error_higher_edu_cert').text('');
+                }
+            });
+        });
+
+
+        // Experience  CERTIFICATE
+        $(document).ready(function () {
+            $('.exper_certificate').on('change', function () {
+                const file = this.files[0];
+                const maxSize = 200 * 1024; // 100 KB
+
+                if (file && file.size > maxSize) {
+                    $('.file_error_exper_certificate')
+                        .text('File size must be 200 KB or less.');
+                    $(this).val('');
+                } else {
+                    $('.file_error_exper_certificate').text('');
+                }
+            });
+        });
+
+
+        // PHOTO SIZE
+        $(document).ready(function () {
+            $('.photo').on('change', function () {
+                const file = this.files[0];
+                const maxSize = 200 * 1024; // 100 KB
+
+                if (file && file.size > maxSize) {
+                    $('.file_error_photo')
+                        .text('File size must be 200 KB or less.');
+                    $(this).val('');
+                } else {
+                    $('.file_error_photo').text('');
+                }
+            });
+        });
+
+
+    </script>
+
+    <!-- <script src="/static/js/nepali.datepicker.v4.0.8.min.c4a713702a8d.js"></script> -->
+    <script src="/static/js/form-handlers.4ecad044c100.js"></script>
+
+</body>
+
+</html>
