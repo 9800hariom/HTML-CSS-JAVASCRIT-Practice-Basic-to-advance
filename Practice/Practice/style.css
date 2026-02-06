@@ -1,0 +1,324 @@
+/* @fon-face{
+    font-family:'Poppins';
+    font-style: normal;
+    font-weight:300;
+    font-display:swap;
+    src:url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8Z11lFc-K.woff2) format('woff2');
+    unicode-range: U+0900 -097F,
+        U+1CD0 -1CF9,
+        U+200C -200D,
+        U+20A8,
+        U+20B9,
+        U+20F0,
+        U+25CC,
+        U+A830-A839,
+        U+A8E0-A8FF,
+        U+11B00 -11B09;
+}
+
+
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.header .title{
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+.header .title{
+    flex:1;
+}
+h4{
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Noto Sans Devanagari', 'Kalimati', sans-serif;
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+.fieldset{
+    display: block;
+    min-inline-size: min-content;
+    margin-inline: 2px;
+    padding-block: 0.35em 0.625em;
+    padding-inline: 0.75em;
+}
+
+body{
+    background: liner-gradient(135deg, #003f66,#0d1b2a);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+form{
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    padding: 35px 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 100%;
+    max-width: 720px;
+    color: white;
+    display: block;
+    unicode-bidi: isolate;
+}
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins','Noto Sans Devanagari','Kalimati','Mangal','Arial','Helvetica',sans-serif;
+} */
+/* Style CSS for Form */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Noto Sans Devanagari', 'Kalimati', 'Mangal', 'Arial', 'Helvetica', sans-serif;
+}
+
+body{
+    
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+form {
+    background-color: black;
+    backdrop-filter: blur(15px);
+    padding: 35px 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 720px;
+    color: white;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    /* vertical center */
+    justify-content: space-between;
+    /* logos on edges, text in center */
+    text-align: center;
+    /* center align text inside */
+    background: #0d4866;
+    /* your background color */
+    padding: 10px 20px;
+}
+
+.header .title {
+    flex: 1;
+    /* take full space between logos */
+}
+
+.header h1,
+.header h2,
+.header h3,
+.header h4 {
+    margin: 2px 0;
+    color: #ffe6b3;
+    /* same color as your design */
+}
+
+h1,
+h2,
+h3,
+h4 {
+    text-align: center;
+    margin: 4px 0;
+
+}
+
+h1 {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.regnum {
+    font-size: 15px;
+    font-weight: 500;
+    color: #ffe4b5;
+    text-align: left;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: 'Noto Sans Devanagari', 'Kalimati', sans-serif;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffe4b5;
+    margin-bottom: 25px;
+}
+
+span.year {
+    font-family: 'Noto Sans Devanagari', 'Kalimati', sans-serif;
+}
+
+label {
+    display: block;
+    margin-top: 18px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #e0e0e0;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #06b6d4;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+select option {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.error {
+    font-size: 13px;
+    color: #ff4d4d;
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 30px;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0284c7, #2563eb);
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.checkbox-inline {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.checkbox-inline input[type="checkbox"] {
+    width: 20px;
+    /* checkbox आकार */
+    height: 20px;
+    accent-color: #007bff;
+    /* checkbox color (modern browsers) */
+    cursor: pointer;
+}
+
+.checkbox-table {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    /* label, checkbox, label, checkbox */
+    gap: 8px 20px;
+    align-items: center;
+}
+
+.checkbox-table label {
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 540px) {
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Hide EC logo only */
+    .header #ec_logo {
+        display: none;
+    }
+
+    /* Nepal logo on top */
+    .header .logo {
+        order: 1;
+        width: 55px;
+        height: auto;
+        margin-bottom: 8px;
+    }
+
+    /* Text comes after logo */
+    .header .title {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .header .title h1,
+    .header .title h2,
+    .header .title h3,
+    .header .title h4 {
+        margin: 2px 0;
+        text-align: center;
+    }
+}

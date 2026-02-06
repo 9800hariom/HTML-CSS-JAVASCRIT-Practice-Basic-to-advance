@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hariom Yadav | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+        }
+
+        .glass {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #3b82f6, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #020617;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+    </style>
+</head>
+
+<body class="selection:bg-blue-500/30 overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+            <div class="text-lg sm:text-2xl font-black tracking-tighter">
+                <span class="gradient-text uppercase">Hariom</span>
+                <span class="text-white">.Yadav</span>
+            </div>
+            <div
+                class="hidden md:flex items-center space-x-6 lg:space-x-10 text-[11px] lg:text-[13px] font-bold uppercase tracking-widest text-slate-400">
+                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a id="resume-btn-header" href="#"
+                    class="flex items-center space-x-2 px-5 py-2 bg-blue-600/10 hover:bg-blue-600 text-blue-400 hover:text-white text-[11px] font-black uppercase tracking-widest rounded-full transition-all border border-blue-500/20">
+                    <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                    <span>Resume</span>
+                </a>
+                <a href="mailto:hariom.yadav.dev@gmail.com"
+                    class="hidden sm:flex items-center space-x-2 px-6 py-2.5 bg-white text-slate-900 text-xs font-black uppercase rounded-full hover:bg-blue-50 transition-all active:scale-95">
+                    <span>Hire Me</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Hero Section -->
+        <section class="relative pt-32 sm:pt-48 pb-20 sm:pb-32 text-center overflow-hidden">
+            <div
+                class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-600/10 blur-[120px] rounded-full -z-10">
+            </div>
+            <div class="reveal">
+                <div
+                    class="inline-flex items-center space-x-2 px-4 py-1.5 mb-8 glass rounded-full border border-blue-500/20 text-blue-400 text-xs font-bold tracking-widest uppercase">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                    </span>
+                    <span>Based in Janakpur, Nepal</span>
+                </div>
+                <h1 class="text-5xl sm:text-7xl md:text-8xl font-black mb-8 leading-[0.9] tracking-tight">
+                    CRAFTING <br />
+                    <span class="gradient-text">DIGITAL</span> EXPERIENCES
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-12 font-medium">
+                    I'm <span class="text-white">Hariom Yadav</span>, a Full Stack Developer specializing in building
+                    high-performance, beautiful web applications.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                    <a href="#"
+                        class="resume-trigger flex items-center justify-center space-x-3 px-10 py-5 bg-white text-slate-950 font-black uppercase tracking-widest rounded-2xl hover:bg-blue-50 transition-all shadow-xl">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        <span>Download Resume</span>
+                    </a>
+                    <a href="#projects"
+                        class="px-10 py-5 bg-blue-600/10 text-blue-400 font-bold rounded-2xl border border-blue-500/20 hover:bg-blue-600 hover:text-white transition-all flex items-center shadow-xl">
+                        View Projects <i data-lucide="chevron-right" class="ml-2 w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 sm:py-32 scroll-mt-20">
+            <div class="grid md:grid-cols-2 gap-20 items-center">
+                <div class="reveal">
+                    <div class="mb-12">
+                        <div class="h-1 w-12 bg-blue-500 mb-4 rounded-full"></div>
+                        <h2 class="text-4xl md:text-5xl font-black mb-4 uppercase italic">THE STORY</h2>
+                        <p id="about-text" class="text-xl text-slate-400 leading-relaxed"></p>
+                    </div>
+                    <div id="education-container" class="space-y-6"></div>
+                </div>
+                <div class="reveal relative flex justify-center">
+                    <div
+                        class="aspect-[4/5] rounded-[48px] overflow-hidden glass border-2 border-white/5 animate-float w-full max-w-sm shadow-2xl">
+                        <img src="https://picsum.photos/seed/hariom/600/750" alt="Hariom"
+                            class="w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 transition-all duration-700">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24 sm:py-32 border-t border-white/5 scroll-mt-20">
+            <div class="reveal mb-16">
+                <div class="h-1 w-12 bg-blue-500 mb-4 rounded-full"></div>
+                <h2 class="text-4xl md:text-5xl font-black mb-4 uppercase italic">ARSENAL</h2>
+                <p class="text-slate-400 font-medium text-lg">Mastery of modern web tools.</p>
+            </div>
+            <div id="skills-grid" class="grid md:grid-cols-3 gap-8"></div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 sm:py-32 border-t border-white/5 scroll-mt-20">
+            <div class="reveal mb-16">
+                <div class="h-1 w-12 bg-blue-500 mb-4 rounded-full"></div>
+                <h2 class="text-4xl md:text-5xl font-black mb-4 uppercase italic">WORK</h2>
+                <p class="text-slate-400 font-medium text-lg">A selection of recent development projects.</p>
+            </div>
+            <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        </section>
+
+        
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-24 sm:py-32 border-t border-white/5 scroll-mt-20">
+            <div class="reveal mb-16">
+                <div class="h-1 w-12 bg-blue-500 mb-4 rounded-full"></div>
+                <h2 class="text-4xl md:text-5xl font-black mb-4 uppercase italic">VOICES</h2>
+                <p class="text-slate-400 font-medium text-lg">What people say about my work.</p>
+            </div>
+            <div id="testimonials-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 sm:py-32 border-t border-white/5 scroll-mt-20">
+            <div class="reveal mb-16">
+                <div class="h-1 w-12 bg-blue-500 mb-4 rounded-full"></div>
+                <h2 class="text-4xl md:text-5xl font-black mb-4 uppercase italic">CONNECT</h2>
+                <p class="text-slate-400 font-medium text-lg">Ready to start your next project?</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-20 mb-20">
+                <div class="reveal space-y-12" id="contact-info"></div>
+                <div class="reveal glass p-10 rounded-[48px] border border-white/10 shadow-2xl">
+                    <form id="contact-form" class="space-y-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="space-y-3">
+                                <label
+                                    class="text-[10px] font-black text-slate-500 uppercase tracking-widest">Name</label>
+                                <input type="text" required placeholder="Your Name"
+                                    class="w-full bg-slate-950/50 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-all text-white">
+                            </div>
+                            <div class="space-y-3">
+                                <label
+                                    class="text-[10px] font-black text-slate-500 uppercase tracking-widest">Email</label>
+                                <input type="email" required placeholder="example@email.com"
+                                    class="w-full bg-slate-950/50 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-all text-white">
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <label
+                                class="text-[10px] font-black text-slate-500 uppercase tracking-widest">Message</label>
+                            <textarea rows="4" required placeholder="What's on your mind?"
+                                class="w-full bg-slate-950/50 border border-white/5 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-500 transition-all text-white resize-none"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full py-5 bg-white text-slate-950 font-black uppercase tracking-widest rounded-2xl hover:bg-blue-50 transition-all active:scale-95 shadow-xl">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="reveal">
+                <div class="mb-8">
+                    <h3 class="text-3xl font-black uppercase italic mb-4">Find Me Here</h3>
+                    <p id="location-text" class="text-slate-400 text-lg"></p>
+                </div>
+                <div id="map-container"
+                    class="w-full h-[400px] rounded-[32px] overflow-hidden border border-white/5 shadow-2xl glass">
+                    <!-- Map will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-20 bg-slate-950 border-t border-white/5 text-center">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-2xl font-black tracking-tighter">
+                <span class="gradient-text uppercase">Hariom</span>
+                <span class="text-white">.Yadav</span>
+            </div>
+            <p id="copyright" class="text-xs font-bold text-slate-600 uppercase tracking-[0.3em]"></p>
+            <div class="flex items-center space-x-8 text-slate-500" id="footer-socials"></div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Profile Data
+        const PROFILE = {
+            name: "Hariom Yadav",
+            email: "hariom.yadav.dev@gmail.com",
+            phone: "+977 9800000000",
+            location: "Janakpur, Nepal",
+            cvUrl: "#",
+            github: "https://github.com",
+            linkedin: "https://linkedin.com",
+            aboutMe: "I am a passionate Full Stack Developer with a deep interest in building modern web architectures. My journey began with a curiosity for how things work on the internet, which evolved into a career dedicated to crafting high-performance, accessible, and beautiful digital experiences.",
+            education: [
+                {
+                    degree: "Bachelor in Computer Science",
+                    institution: "Tribhuvan University",
+                    period: "2021 - Present"
+                }
+            ],
+            skills: [
+                {
+                    category: "Front-End",
+                    icon: "globe",
+                    skills: ["React.js", "TypeScript", "Tailwind CSS", "Next.js", "Framer Motion"]
+                },
+                {
+                    category: "Back-End & DB",
+                    icon: "database",
+                    skills: ["Node.js", "Django", "PostgreSQL", "MongoDB", "Redis"]
+                },
+                {
+                    category: "Design & Tools",
+                    icon: "figma",
+                    skills: ["Figma", "Git", "Docker", "AWS", "CI/CD"]
+                }
+            ],
+            projects: [
+                {
+                    title: "FinTrack Dashboard",
+                    description: "A comprehensive financial tracking dashboard featuring real-time data visualization and secure authentication.",
+                    technologies: ["React", "Chart.js", "Supabase"],
+                    imageUrl: "https://picsum.photos/seed/project1/800/500",
+                    githubUrl: "#"
+                },
+                {
+                    title: "AgroConnect Nepal",
+                    description: "An e-commerce platform connecting local farmers directly with consumers in Madhesh Pradesh.",
+                    technologies: ["Next.js", "Tailwind", "PostgreSQL"],
+                    imageUrl: "https://picsum.photos/seed/project2/800/500",
+                    githubUrl: "#"
+                },
+                {
+                    title: "Real-time Chat Engine",
+                    description: "A high-concurrency chat application built with WebSockets for instantaneous messaging and presence tracking.",
+                    technologies: ["Node.js", "Socket.io", "Redis"],
+                    imageUrl: "https://picsum.photos/seed/project3/800/500",
+                    githubUrl: "#"
+                },
+                {
+                    title: "Portfolio Website",
+                    description: "A personal portfolio website showcasing projects, skills, and testimonials with a modern design.",
+                    technologies: ["React", "Framer Motion", "Vercel"],
+                    imageUrl: "https://picsum.photos/seed/project4/800/500",
+                    githubUrl: "#"
+                }
+
+            ],
+            testimonials: [
+                {
+                    name: "Suman Mahato",
+                    role: "Founder, Tech Solutions Nepal",
+                    content: "Hariom is an exceptionally talented developer who picks up new technologies with incredible speed. His work on our dashboard system was instrumental in our platform's success.",
+                    avatar: "https://picsum.photos/seed/suman/100/100"
+                },
+                {
+                    name: "Roshani Jha",
+                    role: "Project Manager",
+                    content: "A dedicated team player. Hariom's attention to detail in front-end development and his proactive approach to problem-solving make him a valuable asset to any project.",
+                    avatar: "https://picsum.photos/seed/roshani/100/100"
+                },
+                {
+                    name: "Arun Kumar",
+                    role: "Full Stack Engineer",
+                    content: "Working with Hariom was a breeze. He has a great understanding of API integrations and state management. His code is clean, readable, and highly efficient.",
+                    avatar: "https://picsum.photos/seed/arun/100/100"
+                }
+            ]
+        };
+
+        // Initialize the portfolio
+        function init() {
+            // Static Texts
+            document.getElementById('about-text').innerText = PROFILE.aboutMe;
+            document.getElementById('location-text').innerText = `Located in ${PROFILE.location}`;
+            document.getElementById('copyright').innerText = `© ${new Date().getFullYear()} Hariom Yadav • All Rights Reserved`;
+
+            // Resume Links
+            document.querySelectorAll('.resume-trigger, #resume-btn-header').forEach(el => {
+                el.href = PROFILE.cvUrl;
+            });
+
+            // Render Education
+            const eduContainer = document.getElementById('education-container');
+            eduContainer.innerHTML = PROFILE.education.map(edu => `
+                <div class="flex items-start space-x-4 p-6 glass rounded-3xl border-l-4 border-blue-500">
+                    <div class="bg-blue-500/10 p-3 rounded-xl text-blue-500">
+                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-black text-white uppercase tracking-wider mb-1">Education</h4>
+                        <p class="text-slate-400 text-sm font-medium">
+                            ${edu.degree} @ <span class="text-blue-400">${edu.institution}</span> <br />
+                            <span class="opacity-50 text-[10px] uppercase font-black">${edu.period}</span>
+                        </p>
+                    </div>
+                </div>
+            `).join('');
+
+            // Render Skills
+            const skillsGrid = document.getElementById('skills-grid');
+            skillsGrid.innerHTML = PROFILE.skills.map(group => `
+                <div class="glass p-10 rounded-[40px] border border-white/5 hover:border-blue-500/30 transition-all group">
+                    <div class="flex items-center space-x-4 mb-8">
+                        <div class="p-4 bg-slate-900 rounded-2xl text-blue-500 group-hover:scale-110 transition-transform">
+                            <i data-lucide="${group.icon}" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-black uppercase tracking-wider">${group.category}</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2.5">
+                        ${group.skills.map(skill => `
+                            <span class="px-4 py-2 bg-slate-900/50 text-slate-400 rounded-xl text-xs font-bold border border-white/5 group-hover:text-blue-400 transition-colors">
+                                ${skill}
+                            </span>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+
+            // Render Projects
+            const projectsGrid = document.getElementById('projects-grid');
+            projectsGrid.innerHTML = PROFILE.projects.map(project => `
+                <div class="group relative flex flex-col h-full bg-slate-900/40 rounded-[40px] overflow-hidden border border-white/5 hover:border-blue-500/20 transition-all duration-500">
+                    <div class="aspect-[16/10] overflow-hidden relative">
+                        <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent opacity-80"></div>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <h3 class="text-2xl font-black mb-3 uppercase italic">${project.title}</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed flex-1">${project.description}</p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            ${project.technologies.map(tech => `
+                                <span class="text-[10px] font-black uppercase tracking-widest px-3 py-1 bg-white/5 rounded-lg text-slate-500 group-hover:text-blue-400 transition-colors">
+                                    ${tech}
+                                </span>
+                            `).join('')}
+                        </div>
+                        <div class="flex items-center justify-between pt-6 border-t border-white/5">
+                            <a href="${project.githubUrl}" class="flex items-center text-xs font-black uppercase tracking-widest text-slate-500 hover:text-white transition-colors">
+                                <i data-lucide="github" class="w-4 h-4 mr-2"></i> REPO
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-600/10 text-blue-500 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all transform hover:rotate-45">
+                                <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Render Testimonials
+            const testimonialsGrid = document.getElementById('testimonials-grid');
+            testimonialsGrid.innerHTML = PROFILE.testimonials.map(t => `
+                <div class="glass p-8 rounded-[40px] border border-white/5 relative flex flex-col h-full hover:border-blue-500/20 transition-all group">
+                    <div class="absolute top-8 right-8 text-blue-500/20 group-hover:text-blue-500/40 transition-colors">
+                        <i data-lucide="quote" class="w-12 h-12"></i>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-slate-300 text-lg italic leading-relaxed mb-8 relative z-10">"${t.content}"</p>
+                    </div>
+                    <div class="flex items-center space-x-4 pt-6 border-t border-white/5">
+                        <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-blue-500/20">
+                            <img src="${t.avatar}" alt="${t.name}" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-black text-white uppercase text-sm">${t.name}</h4>
+                            <p class="text-xs text-blue-500 font-bold uppercase tracking-widest">${t.role}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Render Contact Info
+            const contactInfo = document.getElementById('contact-info');
+            contactInfo.innerHTML = `
+                <div class="flex items-center space-x-8 group">
+                    <div class="w-16 h-16 bg-blue-600/10 text-blue-500 rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <i data-lucide="mail" class="w-7 h-7"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs font-black text-slate-600 uppercase tracking-widest mb-1">Email Me</div>
+                        <div class="text-2xl font-black text-white">${PROFILE.email}</div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-8 group">
+                    <div class="w-16 h-16 bg-emerald-600/10 text-emerald-500 rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <i data-lucide="phone" class="w-7 h-7"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs font-black text-slate-600 uppercase tracking-widest mb-1">Call Me</div>
+                        <div class="text-2xl font-black text-white">${PROFILE.phone}</div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-8 group">
+                    <div class="w-16 h-16 bg-orange-600/10 text-orange-500 rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <i data-lucide="map-pin" class="w-7 h-7"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs font-black text-slate-600 uppercase tracking-widest mb-1">Location</div>
+                        <div class="text-2xl font-black text-white">${PROFILE.location}</div>
+                    </div>
+                </div>
+            `;
+
+            // Map Embed (using static image as fallback)
+            const mapContainer = document.getElementById('map-container');
+            mapContainer.innerHTML = `
+                <div class="w-full h-full flex items-center justify-center bg-slate-900/50">
+                    <div class="text-center p-8">
+                        <i data-lucide="map-pin" class="w-16 h-16 text-blue-500 mx-auto mb-4"></i>
+                        <h4 class="text-xl font-black mb-2">${PROFILE.location}</h4>
+                        <p class="text-slate-400">Developer based in Madhesh Pradesh, Nepal</p>
+                    </div>
+                </div>
+            `;
+
+            // Socials
+            const socialContainer = document.getElementById('footer-socials');
+            socialContainer.innerHTML = `
+                <a href="${PROFILE.github}" target="_blank" class="hover:text-white transition-colors">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+                <a href="${PROFILE.linkedin}" target="_blank" class="hover:text-white transition-colors">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+                <a href="mailto:${PROFILE.email}" class="hover:text-white transition-colors">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                </a>
+            `;
+
+            // Contact Form Submission
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const name = this.querySelector('input[type="text"]').value;
+                const email = this.querySelector('input[type="email"]').value;
+                const message = this.querySelector('textarea').value;
+
+                // In a real application, you would send this data to a server
+                // For now, we'll just show an alert and reset the form
+                alert(`Thank you ${name}! Your message has been sent. I'll get back to you at ${email} soon.`);
+
+                // Reset form
+                this.reset();
+
+                // Animate the submit button
+                const submitBtn = this.querySelector('button[type="submit"]');
+                submitBtn.textContent = 'Message Sent!';
+                submitBtn.classList.remove('bg-white');
+                submitBtn.classList.add('bg-green-500', 'text-white');
+
+                setTimeout(() => {
+                    submitBtn.textContent = 'Send Message';
+                    submitBtn.classList.remove('bg-green-500', 'text-white');
+                    submitBtn.classList.add('bg-white', 'text-slate-950');
+                }, 3000);
+            });
+
+            // Lucide Icons activation
+            lucide.createIcons();
+
+            // Scroll Animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+
+</html>
