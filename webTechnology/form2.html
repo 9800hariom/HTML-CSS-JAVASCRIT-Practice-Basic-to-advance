@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All form minimum</title>
+</head>
+
+<body>
+    <h1>Form for all Details in page</h1>
+    <div class="form">
+        <form action="./password.html" method="get">
+            <label for="name">name</label>
+            <input type="text" name="" id="name" required>
+            <p></p>
+            <label for="number">Mobilenumber</label>
+            <input type="number" name="" id="number" required>
+            <p></p>
+            <!-- Age ---------------- -->
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" min="18" max="80" required>
+            <!-- <input type="number" id="age" name="age" min="18" max="80" required> -->
+            <p></p>
+
+            <!-- Radio works flow----------------------------name all same name keep than works -->
+            <label for="Gender">Gender</label>
+            <p></p>
+
+            <input type="radio" name="Gender" id="male" value="male">
+            <label for="male">Male</label>
+            <br>
+
+            <input type="radio" name="Gender" id="female" value="female">
+            <label for="female">female</label>
+            <br>
+            <input type="radio" id="html" name="Gender" value="HTML">
+            <label for="html">HTML</label><br>
+            <!-- end of radio works------------------------------ -->
+            <p></p>
+            <!-- hidden input for -------------------------- -->
+            <label for="username">username</label>
+            <input type="text" name="" id="username">
+            <br>
+            <label for="hidden">hidden</label>
+            <br>
+            <input type="text" name="username" id="hidden" hidden>
+            <input type="hidden" id="hidden" name="username">
+            <input type="hidden" name="name" value="JohnDoe">
+            <!-- end of hidden input----------------------------- -->
+            <br>
+            <!-- All ready fill Radio button in this case ------------------------- -->
+            <label for="country"> Your country</label>
+            <br>
+            <label for="nepal">nepal</label>
+            <input type="radio" name="country" id="nepal" checked>
+            <br>
+            <label for="other">other</label>
+            <input type="radio" name="country" id="other">
+            <br>
+            <label for="other">chaina</label>
+            <input type="radio" name="country" id="other"
+                checked><!-----  when two in one time checked than recent checked only works this is normal behaviro of html -->
+            <br>
+            <label for="other">newyork</label>
+            <input type="radio" name="country" id="other">
+            <!-- end of radio checked already -------------------------------------- -->
+            <br>
+
+            <p></p>
+            <!-- <input type="file" name="" id="folder" size="700kb" min-size="300kb">  it is not work in html folder size support from html-->
+            <input type="file" name="" id="" accept="png" required>
+            <!-- end of file  -->
+            <br>
+            <!-- checked box for already fill ------------------- -->
+            <label for="box"><i>checkedbox</i></label>
+            <br>
+            <label for="name">name</label>
+            <input type="checkbox" name="box" id="name" checked>
+            <br>
+            <label for="cast">cast</label>
+            <input type="checkbox" name="box" id="cast">
+            <!-- end of checked box ----------------------------------- -->
+            <br>
+            <label for="color">colorful </label>
+            <br>
+            <label for="red">red</label>
+            <input type="color" name="color" id="red" required>
+            <label for="geen">geen</label>
+            <input type="color" name="color" id="geen">
+            <label for="yellow">yellow</label>
+            <input type="color" name="color" id="yellow" accept="red">
+            <!-- end of color for chose -------------------------------------------- -->
+            <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <input type="submit" name="" id="submit">
+
+
+
+
+
+
+
+
+
+
+            <label for="pwd">Password:</label>
+            <input type="password" id="pwd" name="pwd" required>
+            <input type="submit" value="Go">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </form>
+    </div>
+</body>
+
+</html>
